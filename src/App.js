@@ -9,7 +9,7 @@ import { Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <main>
+    <main className="text-center">
       <Header />
       <Navigation />
       <Route exact path="/" component={WelcomePage} />

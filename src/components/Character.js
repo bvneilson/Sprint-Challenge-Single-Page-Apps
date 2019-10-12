@@ -26,6 +26,8 @@ export default function Character(props) {
   }
 
   return (
-    <CharacterCard character={character} />
+    <div className="row text-center">
+      <CharacterCard character={character} />
+    </div>
   )
 }

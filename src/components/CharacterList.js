@@ -3,6 +3,7 @@ import axios from "axios";
 import CharacterCard from "./CharacterCard.js";
 import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm.js";
+import { Container, Row } from "reactstrap";
 
 export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
@@ -30,11 +31,13 @@ export default function CharacterList(props) {
   }
 
   return (
-    <section className="character-list">
+    <section className="character-list container">
       <SearchForm characterList={characterList} searchResults={searchResults} setSearchResults={setSearchResults} />
-      {searchResults.map((character, index) => (
-        <Link to={`/characters/${(character.id)}`} key={index}><CharacterCard character={character} /></Link>
-      ))}
+      <div className="row text-center">
+        {searchResults.map((character, index) => (
+          <CharacterCard character={character} key={index} />
+        ))}
+      </div>
     </section>
   );
 }
